@@ -5,7 +5,7 @@ class ArgumentParser
     public: 
         void Parse(int argc, char *argv[],RuntimeConfiguration* config)
         {
-            config->SortBy = None;
+            config->SortBy = Bytes;
             bool interfaceFound = false;
             if(argc % 2 == 0)
             {

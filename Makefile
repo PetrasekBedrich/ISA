@@ -3,10 +3,11 @@ CXX = g++                # The C++ compiler
 CXXFLAGS = -Wall -g      # Compiler flags (-Wall enables warnings, -g includes debug info)
 TARGET = isa-top         # Name of the final executable
 SRC = isa-top.cpp        # Source file
+LIBCAP = -lpcap			 # Libcap link
 
 # Target to compile the source file into an executable
 $(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+	$(CXX) $(CXXFLAGS) $(SRC) $(LIBCAP) -o $(TARGET) 
 
 # Target to run the program
 run: $(TARGET)
