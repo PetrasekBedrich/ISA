@@ -1,13 +1,6 @@
 #include <string> 
-using namespace std;
-
-enum SortByENUM
-{
-    Packets,
-    Bytes,
-    None
-};
-
+#include "RuntimeConfiguration.h"
+#pragma once
 class RuntimeConfiguration
 {
     public:

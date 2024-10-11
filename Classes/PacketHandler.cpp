@@ -8,7 +8,7 @@ class PacketHandler
         {
             this->runtimeConfiguration = runtimeConfiguration;
         }
-        void CapturePacketsTest()
+        void CapturePackets()
         {
             char errbuf[PCAP_ERRBUF_SIZE];
             pcap_if_t *alldevs;  
@@ -29,7 +29,9 @@ class PacketHandler
                 fprintf(stderr,"ERROR: Interface could not be found");
                 exit(1);
             }
+            foundDevice = device;
         }
+        pcap_if_t* foundDevice;
     private:
         RuntimeConfiguration* runtimeConfiguration;
 };

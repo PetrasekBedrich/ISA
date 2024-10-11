@@ -1,5 +1,6 @@
 #include "ArgumentParser.cpp"
 #include "PacketHandler.cpp"
+#include "TrafickHandler.cpp"
 class Program
 {
     public:
@@ -8,8 +9,9 @@ class Program
             
             parser->Parse(argc,argv,runtimeConfigration);
             packetHandler = new PacketHandler(runtimeConfigration);
-            packetHandler->CapturePacketsTest();
-            return 0;
+            packetHandler->CapturePackets();
+            TrafickHandler handler(runtimeConfigration);
+            return handler.run();
         }
     private:
         ArgumentParser* parser = new ArgumentParser();
